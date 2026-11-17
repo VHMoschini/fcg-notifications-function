@@ -80,7 +80,7 @@ O broker precisa estar acessível pelo Function App — RabbitMQ com endpoint p�
 
 ## Kubernetes e CI/CD (Fase 4)
 
-O manifesto que roda a função no AKS fica em [`k8s/`](k8s) (com `kustomization.yaml`), e a pipeline [`.github/workflows/ci-cd.yml`](.github/workflows/ci-cd.yml) faz build, imagem versionada, Trivy, push no ACR e rolling update no cluster a cada push na `master`. As credenciais (AMQP e storage do host) chegam pelo Secret `notifications-function-secret`, criado pela pipeline do `fcg-platform`.
+O manifesto que roda a função no AKS fica em [`k8s/`](k8s) (com `kustomization.yaml`), e a pipeline [`.github/workflows/ci-cd.yml`](.github/workflows/ci-cd.yml) faz build, imagem versionada, Trivy, push no ACR e rolling update no cluster a cada push na `main`. As credenciais (AMQP e storage do host) chegam pelo Secret `notifications-function-secret`, criado pela pipeline do `fcg-platform`.
 
 ```powershell
 kubectl apply -k k8s/
